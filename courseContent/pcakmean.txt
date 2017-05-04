@@ -1,0 +1,1 @@
+http://nbviewer.jupyter.org/github/jakevdp/sklearn_pycon2014/blob/master/notebooks/05_unsupervised_in_depth.ipynb

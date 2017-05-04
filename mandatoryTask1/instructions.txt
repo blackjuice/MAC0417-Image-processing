@@ -1,0 +1,39 @@
+The exercise
+Do the exercises of the following notebook: Atividade_1_3.ipynb
+
+The exercise has to be done in a unique notebook. Name the notebook with your surname and your NUSP, for instance: Hirata1092019.ipynb
+
+You have to upload your notebook until May 7th in the link named: Mandatory task 1.
+
+Ignore the statement:
+
+Lembrar que como o Adessowiki é um ambiente colaborativo, poderemos compartilhar nossas experiências e aprender e ajudar os colegas.
+
+It refers to Adessowiki and we are not going to use it this year.
+
+Try to answer the following questions:
+
+http://adessowiki.fee.unicamp.br/adesso-1/q/ae1-3/
+
+You can repeat any number of times you want.
+
+
+
+
+Start by reviewing the following notebooks:
+
+1- tutorial_numpy_1_1.ipynb
+2- tutorial_img_ds.ipynb
+3- tutorial_numpy_1_2.ipynb
+4- tutorial_numpy_1_3.ipynb
+5- tutorial_numpy_1_4.ipynb
+6- tutorial_numpy_1_5.ipynb
+7- tutorial_1_imagens.ipynb
+
+There are six directories to be noticed:
+data        - images used to illustrate the exercises
+figures     - just a cover image
+dev         - some hints and lessons to the developers
+master      - the tutorial I asked you to run in order to learn Numpy and Image Processing
+src         - the toolbox
+deliver     - the exercises to be delivered
