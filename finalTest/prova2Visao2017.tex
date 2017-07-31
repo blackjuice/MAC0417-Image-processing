@@ -1,0 +1,185 @@
+\documentclass[12pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{setspace}
+\usepackage{boxedminipage}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{multirow}
+\usepackage[pdftex]{graphicx}
+\usepackage{float}
+\usepackage{url}
+
+%\setlength{\parskip}{0.1cm}
+\setlength{\paperheight}{29.7cm}
+\setlength{\textheight}{23.0cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\topmargin}{-1.0cm}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+{\sf {\large Visão e Processamento de Imagens - Segunda avaliação}}
+
+\vspace{0.5cm}
+
+\textbf{Preste atenção para as regras da prova}
+\end{center}
+\begin{enumerate}
+\item Não esqueça de colocar o seu nome na prova.
+\item O fonte latex (.tex) da prova será disponibilizado para facilitar
+que você não tenha que copiar o enunciado das questões. A prova deve
+ser compilada com o programa \texttt{pdflatex} que criará um arquivo
+pdf.
+\item A prova é \textbf{individual} e será carregada no novo
+sistema de detecção de plágios da USP. Os alunos podem conversar
+sobre as questões mas não devem apresentar as soluções para os colegas.
+\item Se a questão pedir algum código, entregue-o em arquivo à parte
+  no formato Jupyter notebook.
+\item A prova deve ser entregue eletronicamente no paca até às
+23h55m do dia 2/7.
+\end{enumerate}
+
+\newpage
+
+\begin{itemize}
+\item[{\bf Q1.}] Responda o melhor que puder sobre as questões abaixo
+  de Processamento de Imagens:
+  \begin{enumerate}
+  \item Explique as diferenças entre Computação Gráfica, Processamento
+    de Imagens e Visão Computacional
+  \item Explique as semelhanças e as diferenças entre as
+    representações de imagens baseadas em reticulados completos e em
+    espaços vetoriais infinitos. Tome uma imagem binária de 4 pontos
+    (2x2) e represente-a num reticulado completo (para facilitar o seu
+    desenho, sugiro usar a função \texttt{Posets.BooleanLattice} do
+    SAGE, um software matemático muito divertido). Represente a mesma
+    imagem no espaço das frequências (sugiro usar a \texttt{fft} o
+    \texttt{numpy}, como fizemos em classe). 
+  \item Os problemas de visão são mal-postos, isto é,
+    (1) eles podem não ter solução, ou (2), se têm, a solução não é única, ou
+    (3) a solucão é muito sensível aos parâmetros iniciais (pouco
+    robusta). Como a visão humana trata isso? Como a visão de máquina
+    poderia tratar isso?
+\end{enumerate}
+\item[{\bf Q2.}] Esta questão é inspirada no blog da Tanya Khovanova.
+No filme Missão Impossível III, Ethan Hunt (Tom Cruise) precisa roubar
+o ``Pé de Coelho'' de um prédio muito alto em Shanghai (segundo prédio
+desenhado na foto abaixo). Do apartamento onde está escondido, ele
+planeja a estratégia da missão estudando o prédio alvo olhando pela
+janela do apartamento. Ele pretende entrar pelo topo do prédio e a
+forma de fazer isso é subir até o topo do prédio que se enxerga no
+lado esquerdo da foto e usar uma corda, como um pêndulo, para se jogar
+do prédio mais alto para o prédio alvo (prédio do meio). Para
+calcular o comprimento da corda, ele usa a projeção dos prédios no
+vidro da sua janela.
+\begin{center}
+\includegraphics[scale=0.7]{MI3Skyline.png} 
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.6]{MI3Rope.png}
+\end{center}
+\begin{itemize}
+\item Que propriedades da luz ele está usando que justificam o seu desenho? Discuta.
+\item Que informações ele ainda precisa para seu plano dar certo? Discuta.
+\end{itemize}
+
+\item[{\bf Q3.}] 
+\begin{itemize}
+\item A convolução das transformadas de Fourier de duas
+  funções é a operação definida por:
+$$F(\omega)\otimes G(\omega) =  \int\limits_{k=-\infty}^{\infty} F(\nu)G(\omega- \nu) d\nu$$
+Mostre que a convolução de $F(\omega)$ e $G(\omega)$ é 
+igual a transformada de Fourier de $f(x)$ e $g(x)$
+\item Calcule, ``na mão'' (explicitando os cálculos como fizemos em
+  classe) a transformada de Fourier da imagem abaixo:
+\begin{center}
+$
+\begin{bmatrix}
+    1 & -1 \\
+    2 & 0  \\
+\end{bmatrix}
+$
+\end{center}
+\end{itemize}
+%
+\item[{\bf Q4.}] Usando as operações e operadores da Morfologia
+  Matemática, tente segmentar as letras manuscritas (``binarizar'')
+  das imagens de documentos manchadas do arquivo \texttt{DIP.zip}. As
+  melhores  soluções são aquelas que funcionam para a maior parte das
+  imagens. \textbf{Este é um problema real, não espere resolvê-lo
+    totalmente, mas almeje isto. Por favor, essas imagens são
+    proprietárias, assim, não as distribua.}. Sua solução deve usar a
+  toolbox de Morfologia Matemática do prof. Lotufo, dentro de um
+  Jupyter notebook. Envie apenas o notebook, não precisa enviar as
+  imagens. 
+%
+\item[{\bf Q5.}]  Questão extra para os alunos de pós (vale nota
+  extra para os alunos de graduação que quiserem fazer).
+\begin{itemize}
+\item  Leia o artigo: ``Bilateral Filtering for
+  Gray and Color Images'' de Tomasi e Manduchi (pegue o artigo aqui:
+  \url{https://users.cs.duke.edu/~tomasi/papers/tomasi/tomasiIccv98.pdf}). Faça
+  um resumo de uma página do artigo. O resumo deve conter a ideia
+  geral, os principais  resultados, as vantagens e desvantagens do
+  método e uma análise dos  resultados experimentais. Escolha 10
+  imagens em níveis de cinza e borre-as  com um filtro gaussiano (kernel à sua escolha). 
+\item Implemente o filtro bilateral, ou use a implementação da OpenCV via python
+  (\url{http://opencvpython.blogspot.com.br/},
+  \url{http://docs.opencv.org/modules/imgproc/doc/filtering.html#bilateralfilter})
+  e teste o filtro com as imagens borradas. Comente os resultados
+  comparando-os qualitativamente com as imagens originais. Esta parte
+  da questão deve ser feita em notebook do Jupyter e deve ser anexada
+  no zip (tgz) file que será entregue.
+\end{itemize}
+
+\newpage
+\thispagestyle{empty}
+\setlength{\topmargin}{-2.0cm}
+\setlength{\headsep}{0.0cm}
+\item[{\bf Q5.}] Auto-avaliação
+\begin{enumerate}
+\item Você tentou resolver algum exercício passado em classe? Lembra quais?
+\vspace{2.0cm}
+\item Quantas horas por semana você tem para estudar extra-classe?
+\vspace{1.0cm}
+\item Dessas horas, quantas você usa para acompanhar esta disciplina?
+\vspace{1.0cm}
+\item Você tem motivação para assistir às aulas? Se sim, o que
+         aumentaria ainda mais sua motivação? Se não, o que você sugere para 
+         que as aulas sejam motivadoras?
+\vspace{2.0cm}
+\item A disciplina satisfez suas expectativas? 
+\vspace{1.0cm}
+\item Além do que foi dado, o que mais você gostaria de aprender?
+\vspace{2.0cm}
+\item Qual dos tópicos você gostaria que fossem aprofundado?
+\vspace{1.0cm}
+\item Você tentou fazer os exercícios do curso do prof. Lotufo? Explicite quais.
+\vspace{3.0cm}
+\newpage
+\thispagestyle{empty}
+\setlength{\topmargin}{-2.0cm}
+\setlength{\headsep}{0.0cm}
+\item O suporte do paca foi proveitoso? O que o tornaria mais proveitoso? 
+\vspace{2.0cm}
+\item A quantidade de exercícios foi suficiente? Você
+  sente-se seguro para resolver problemas de processamento de imagens?
+  O que poderia ser melhorado nos exercícios?
+\vspace{2.0cm}
+\item Faça uma breve auto-avaliação de seu desempenho considerando sua 
+         facilidade em entender um problema de processamento de
+         imagens, implementar sua solução, 
+         seu entendimento dos conceitos, sua assiduidade às aulas, sua
+         participação em aulas e seu desempenho na prova. Se você se
+         sentir confortável para isso, atribua-se uma nota de 0 a 10
+         de acordo com sua auto-avaliação. Essa nota será considerada
+         no cômputo final da sua nota, caso o professor entenda que
+         você soube se auto-avaliar.
+\end{enumerate}
+\end{itemize}
+\end{document}
+
